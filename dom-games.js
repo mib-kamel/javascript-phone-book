@@ -1,6 +1,5 @@
+// The event handelers and drawing in the screen
 (function () {
-
-    drawContactsList(10, 0);
 
     var addButton = document.getElementById("add-button"),
         removeButton = document.getElementById("remove-button"),
@@ -11,6 +10,11 @@
         contactsPerPage = 10,
         prevSelectedContact;
 
+
+    //First draw
+    drawContactsList(contactsPerPage, currentPage);
+
+    //Add new contacts
     addButton.addEventListener("click", function (e) {
 
         e.preventDefault();
@@ -34,10 +38,6 @@
         }
     });
 
-    removeButton.addEventListener("click", function (e) {
-        e.preventDefault();
-    });
-
 
     function drawContactsList(contactsPerPage, page, nextClicked) {
         var oldContatcsList = document.getElementById("contacts-list"),
@@ -55,6 +55,7 @@
                 contactListContainer.style.visibility = "hidden";
                 contactListContainer.style.opacity = "0";
             }
+            //To draw the prev page if the last contact in the page deleted
             else if (page > 0 && !nextClicked) drawContactsList(contactsPerPage, page - 1);
             return;
         }
@@ -115,7 +116,9 @@
 
         if (removeButtonClickEventListener) removeButton.removeEventListener("click", removeButtonClickEventListener);
 
+        //Remove the selected contact event handler
         removeButtonClickEventListener = function (e) {
+            e.preventDefault();
             PhoneBook.remove(contact.id);
             contactDetailsContainer.style.visibility = "hidden";
             contactDetailsContainer.style.opacity = "0"
