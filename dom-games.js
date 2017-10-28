@@ -123,7 +123,6 @@
             contactDetailsContainer.style.visibility = "hidden";
             contactDetailsContainer.style.opacity = "0"
             drawContactsList(contactsPerPage, currentPage);
-            alert("Contact removed");
         }
 
         removeButton.addEventListener("click", removeButtonClickEventListener);
