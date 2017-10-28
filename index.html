@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="./logo.png" class="logo" alt="logo">
+        <p class="header-title">Phone book</p>
+    </div>
+
+    <div class="container">
+        <div class="add-contact">
+            <h2>Add contact</h2>
+
+
+            <form>
+                <fieldset>
+                    <label for="name" class="form-label">Name: </label>
+                    <input type="text" id="new-contact-name" value="" />
+                </fieldset>
+
+                <fieldset>
+                    <label for="phone" class="form-label">Phone: </label>
+                    <input type="text" id="new-contact-phone" value="" />
+                </fieldset>
+
+                <fieldset>
+                    <label for="email" class="form-label">Email: </label>
+                    <input type="text" id="new-contact-email" value="" />
+                </fieldset>
+
+                <button class="flat-button" id="add-button">Add</button>
+            </form>
+
+        </div>
+
+        <div class="contacts-list-container" id="contacts-list-container">
+            <h2>Contacts list</h2>
+            <ul id="contacts-list">
+            </ul>
+            <div class="pagination">
+                <p>Current page is: <span id="current-page"></span></p>
+                <span>
+                    <a id="prev-page">prev</a>
+                </span>
+                <span> | </span>
+                <span>
+                    <a id="next-page">next</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="contact-details-container" id="contact-details-container">
+            <h2>Contact details</h2>
+
+            <form>
+                <fieldset>
+                    <label for="name" class="form-label">Name: </label>
+                    <input type="text" id="name" value="" disabled />
+                </fieldset>
+
+                <fieldset>
+                    <label for="phone" class="form-label">Phone: </label>
+                    <input type="text" id="phone" value="" disabled />
+                </fieldset>
+
+                <fieldset>
+                    <label for="email" class="form-label">Email: </label>
+                    <input type="text" id="email" value="" disabled />
+                </fieldset>
+
+                <button class="flat-button" id="remove-button">Remove</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">No rights reserved</div>
+
+    <script src="./phoneBook.js"></script>
+    <script src="./dom-games.js"></script>
+</body>
+
+</html>
