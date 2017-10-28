@@ -94,11 +94,11 @@
     }
 
     function nextPageClicked(e) {
-            drawContactsList(contactsPerPage, currentPage + 1, true);
+        drawContactsList(contactsPerPage, currentPage + 1, true);
     }
 
     function prevPageClicked(e) {
-            drawContactsList(contactsPerPage, currentPage - 1);
+        drawContactsList(contactsPerPage, currentPage - 1);
     }
 
     function selectContact(e, contact) {

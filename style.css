@@ -173,4 +173,8 @@ input[type="text"]
         width: 100%;
         margin: 20px 0px;
     }
+
+    .logo {
+        margin-left: 20px;
+    }
 }
