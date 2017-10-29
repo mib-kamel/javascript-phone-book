@@ -2,7 +2,6 @@
 (function () {
 
     var addButton = document.getElementById("add-button"),
-        removeButton = document.getElementById("remove-button"),
         removeButtonClickEventListener,
         nextPageEventListner,
         prevPageEventListner,
@@ -106,6 +105,7 @@
             contactDetailsContainer = document.getElementById("contact-details-container");
 
         makeVisible(contactDetailsContainer);
+        
         document.getElementById("name").value = contact.name;
         document.getElementById("phone").value = contact.phone;
         document.getElementById("email").value = contact.email;
