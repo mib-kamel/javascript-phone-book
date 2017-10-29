@@ -56,8 +56,6 @@ body {
 .contact-details-container {
     width: 35%;
     margin-left: 20px;
-    visibility: hidden;
-    opacity: 0;    
 }
 
 .footer {
@@ -114,11 +112,6 @@ input[type="text"]
     background-color: #27496d;
 }
 
-.contacts-list-container{
-    visibility: hidden;
-    opacity: 0;    
-}
-
 .contacts-list-container ul {
     font-size: .9em;
 	padding: 0;
@@ -126,7 +119,6 @@ input[type="text"]
 	
 .contacts-list-container li {	
     display: block;
-    visibility: visible;
 	padding: 5px 5px 5px 0.5em;
 	background-color: white;
 	color: black;
@@ -164,6 +156,15 @@ input[type="text"]
     font-weight: bold;
 }
 
+.visible {
+    visibility: visible;
+    opacity: 1;   
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;    
+}
 @media screen and (max-width: 850px) {
     .container {
         flex-direction: column;

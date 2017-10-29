@@ -52,16 +52,14 @@
 
         if (contacts.length === 0) {
             if (page === 0) {
-                contactListContainer.style.visibility = "hidden";
-                contactListContainer.style.opacity = "0";
+                makeInvisible(contactListContainer);
             }
             //To draw the prev page if the last contact in the page deleted
             else if (page > 0 && !nextClicked) drawContactsList(contactsPerPage, page - 1);
             return;
         }
 
-        contactListContainer.style.visibility = "visible";
-        contactListContainer.style.opacity = "1";
+        makeVisible(contactListContainer);
         contacts.forEach(function (contact, index) {
             var newContactLI = document.createElement("li");
             newContactLI.innerText = contact.name;
@@ -107,8 +105,7 @@
         var removeButton = document.getElementById("remove-button"),
             contactDetailsContainer = document.getElementById("contact-details-container");
 
-        contactDetailsContainer.style.visibility = "visible";
-        contactDetailsContainer.style.opacity = "1"
+        makeVisible(contactDetailsContainer);
         document.getElementById("name").value = contact.name;
         document.getElementById("phone").value = contact.phone;
         document.getElementById("email").value = contact.email;
@@ -120,12 +117,21 @@
         removeButtonClickEventListener = function (e) {
             e.preventDefault();
             PhoneBook.remove(contact.id);
-            contactDetailsContainer.style.visibility = "hidden";
-            contactDetailsContainer.style.opacity = "0"
+            makeInvisible(contactDetailsContainer);
             drawContactsList(contactsPerPage, currentPage);
         }
 
         removeButton.addEventListener("click", removeButtonClickEventListener);
+    }
+
+    function makeVisible(elem) {
+        elem.classList.remove("invisible");
+        elem.classList.add("visible");
+    }
+
+    function makeInvisible(elem) {
+        elem.classList.remove("visible");
+        elem.classList.add("invisible");
     }
 
 })();
